@@ -1,4 +1,7 @@
-# Quickstart
+## Demo  
+https://deric-shopify-challenge.netlify.app/
+
+## Quickstart
 - Requires an API key for the webapp to work property.
   - Signup for key: http://www.omdbapi.com/apikey.aspx
 - Create a `.env` file at root directory.
