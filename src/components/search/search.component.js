@@ -37,7 +37,7 @@ function Search() {
             setHasResults(true);
             setMovies(response.data.Search);
         } catch(error) {
-            console.log(error.messsage);
+            console.error(error);
         }
     }
 
