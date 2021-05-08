@@ -13,7 +13,7 @@
         width: 30%;
         height: 150px;
         background-repeat: no-repeat;
-        background-color: red;
+        background-color: gray;
         border-radius: 5%;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
@@ -22,5 +22,9 @@
     .content {
         width: 70%;
         padding: 2%;
+
+        button {
+            margin-top: 2%;
+        }
     }
 }

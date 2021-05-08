@@ -1,9 +1,9 @@
 import "./message.styles.scss";
 
-function Message() {
+function Message(props) {
     return(
         <div className="message-banner">
-            You now have 5 nominations.
+            <center> {props.text} </center>
         </div>
     )
 }

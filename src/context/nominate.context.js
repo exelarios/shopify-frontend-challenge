@@ -14,6 +14,7 @@ const actions = {
 function reducer(state, action) {
     switch(action.type) {
         case actions.ADD_NOMINEE:
+            if (state.nominees.length >= 5) return state;
             if (state.nominees.some(item => item.id === action.value.id)) {
                 return state;
             }

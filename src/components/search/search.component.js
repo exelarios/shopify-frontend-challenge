@@ -12,6 +12,7 @@ function Search() {
 
     const [movies, setMovies] = useState([]);
     const [query, setQuery] = useState("");
+    const [hasResults, setHasResults] = useState(true);
 
     function handleOnChange(event) {
         setQuery(event.target.value);
@@ -19,11 +20,21 @@ function Search() {
 
     async function onSubmit(event) {
         event.preventDefault();
+        if (movies.length >= 1 && query.length < 1) {
+            setMovies([]);
+            return;
+        }
+        if (query.length < 1) return;
         try {
             const response = await axios.get(`http://www.omdbapi.com/?apikey=${API_KEY}&type=movie&s=${query}`);
             if (response.statusText !== "OK") {
                 throw new Error("Failed to fetch movies.");
             }
+            if (response.data?.Response === "False") {
+                setHasResults(false);
+                return;
+            }
+            setHasResults(true);
             setMovies(response.data.Search);
         } catch(error) {
             console.log(error.messsage);
@@ -48,6 +59,9 @@ function Search() {
                     placeholder="search movie"
                 />
             </form>
+            { !hasResults && 
+                <div className="results-message"> No results found. </div> 
+            } 
             <div className="items-wrapper">
                 { movies.map(item => {
                     return <Item

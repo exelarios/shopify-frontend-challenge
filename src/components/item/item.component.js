@@ -25,7 +25,7 @@ function Item(props) {
                 <div className="title"> { title } </div>
                 <div> { year } </div>
                 {
-                    isNominated() ?
+                    isNominated() || nominees.length >= 5 ?
                     <button onClick={onAddNominee} disabled> Nominate </button>
                     :
                     <button onClick={onAddNominee}> Nominate </button>
