@@ -1,0 +1,13 @@
+body {
+    background-color: #f4f6f8;
+}
+
+.App {
+    margin: auto;
+    max-width: 1000px;
+    
+    .container {
+        justify-content: center;
+        display: flex;
+    }
+}

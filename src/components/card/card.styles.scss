@@ -1,0 +1,26 @@
+.card {
+
+    width: 95%;
+    display: flex;
+    margin: 3%;
+
+    background-color: rgb(233, 233, 233);
+    border-radius: 5px;
+    align-self: center;
+
+    .poster {
+        background-size: cover;
+        width: 30%;
+        height: 150px;
+        background-repeat: no-repeat;
+        background-color: red;
+        border-radius: 5%;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .content {
+        width: 70%;
+        padding: 2%;
+    }
+}
