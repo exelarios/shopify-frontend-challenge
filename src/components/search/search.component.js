@@ -26,7 +26,7 @@ function Search() {
         }
         if (query.length < 1) return;
         try {
-            const response = await axios.get(`http://www.omdbapi.com/?apikey=${API_KEY}&type=movie&s=${query}`);
+            const response = await axios.get(`https://www.omdbapi.com/?apikey=${API_KEY}&type=movie&s=${query}`);
             if (response.statusText !== "OK") {
                 throw new Error("Failed to fetch movies.");
             }
